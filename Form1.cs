@@ -27,6 +27,9 @@ namespace BouncingBall
         {
             verVelocity = ballStep;
             horVelocity = ballStep;
+            Ball.BackColor = Color.Transparent;
+            Ball.SizeMode = PictureBoxSizeMode.StretchImage;
+            Ball.Image = Properties.Resources.DVD;
 
             this.KeyDown += new KeyEventHandler(App_KeyDown);
 

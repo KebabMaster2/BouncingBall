@@ -38,7 +38,7 @@
             this.Ball.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.Ball.Location = new System.Drawing.Point(100, 100);
             this.Ball.Name = "Ball";
-            this.Ball.Size = new System.Drawing.Size(87, 86);
+            this.Ball.Size = new System.Drawing.Size(100, 67);
             this.Ball.TabIndex = 0;
             this.Ball.TabStop = false;
             // 
@@ -58,6 +58,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.BallStepLabel);
             this.Controls.Add(this.Ball);
+            this.DoubleBuffered = true;
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.Ball)).EndInit();
