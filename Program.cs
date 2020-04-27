@@ -16,7 +16,7 @@ namespace BouncingBall
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Ball());
+            Application.Run(new Form1());
         }
     }
 }

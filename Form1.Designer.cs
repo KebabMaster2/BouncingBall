@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.Ball = new System.Windows.Forms.PictureBox();
+            this.BallStepLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Ball)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,22 +42,34 @@
             this.Ball.TabIndex = 0;
             this.Ball.TabStop = false;
             // 
+            // BallStepLabel
+            // 
+            this.BallStepLabel.AutoSize = true;
+            this.BallStepLabel.Location = new System.Drawing.Point(50, 25);
+            this.BallStepLabel.Name = "BallStepLabel";
+            this.BallStepLabel.Size = new System.Drawing.Size(35, 13);
+            this.BallStepLabel.TabIndex = 1;
+            this.BallStepLabel.Text = "label1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.BallStepLabel);
             this.Controls.Add(this.Ball);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.Ball)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.PictureBox Ball;
+        private System.Windows.Forms.Label BallStepLabel;
     }
 }
 

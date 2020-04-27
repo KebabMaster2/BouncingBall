@@ -21,6 +21,16 @@ namespace BouncingBall
         public Form1()
         {
             InitializeComponent();
+            InitializeApp();
+        }
+        private void InitializeApp()
+        {
+            verVelocity = ballStep;
+            horVelocity = ballStep;
+
+            this.KeyDown += new KeyEventHandler(App_KeyDown);
+
+            UpdateBallStepLabel();
             InitializeMainTimer();
         }
         private void InitializeMainTimer()
@@ -32,12 +42,46 @@ namespace BouncingBall
         }
         private void MainTimer_Tick(object sender, EventArgs e)
         {
-
+            MoveBall();
+            BallBorderCollide();
         }
         private void MoveBall()
         {
             Ball.Top += verVelocity;
             Ball.Left += horVelocity;
         }
+        private void BallBorderCollide()
+        {
+            if(Ball.Top + Ball.Height > ClientRectangle.Height || Ball.Top < 0) //collide w bottom or top
+            {
+                verVelocity = -verVelocity;
+            }
+            else if(Ball.Left < 0 || Ball.Left + Ball.Width > ClientRectangle.Width) // collide w left or right
+            {
+                horVelocity = -horVelocity;
+            }          
+        }
+        private void App_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.X)
+            {
+                ballStep += 1;
+                UpdateBallStepLabel();
+            }
+            else if (e.KeyCode == Keys.Z)
+            {
+                if (ballStep > 0)
+                {
+                    ballStep -= 1;
+                    UpdateBallStepLabel();
+                }
+                
+            }
+        }
+        private void UpdateBallStepLabel()
+        {
+            BallStepLabel.Text = "Ball Step: " + ballStep;
+        }
+        
     }
 }
