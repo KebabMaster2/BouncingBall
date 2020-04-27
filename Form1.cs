@@ -66,6 +66,16 @@ namespace BouncingBall
             if(e.KeyCode == Keys.X)
             {
                 ballStep += 1;
+                if (ballStep >1)
+                {
+                    verVelocity = ballStep * (verVelocity / Math.Abs(verVelocity));
+                    horVelocity = ballStep * (horVelocity / Math.Abs(horVelocity));
+                }
+                else
+                {
+                    verVelocity = ballStep;
+                    horVelocity = ballStep;
+                }
                 UpdateBallStepLabel();
             }
             else if (e.KeyCode == Keys.Z)
@@ -73,9 +83,18 @@ namespace BouncingBall
                 if (ballStep > 0)
                 {
                     ballStep -= 1;
-                    UpdateBallStepLabel();
+                    if (ballStep >1)
+                    {
+                        verVelocity = ballStep * (verVelocity / Math.Abs(verVelocity));
+                        horVelocity = ballStep * (horVelocity / Math.Abs(horVelocity));
+                    }
+                    else
+                    {
+                        verVelocity = ballStep;
+                        horVelocity = ballStep;
+                    }
                 }
-                
+                UpdateBallStepLabel();
             }
         }
         private void UpdateBallStepLabel()
